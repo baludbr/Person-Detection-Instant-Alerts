@@ -9,12 +9,14 @@ from datetime import datetime
 import telebot
 import time
 from .models import *
+from dotenv import load_dotenv
+load_dotenv() 
 def start(update, context):
     
     chat_id = update.message.chat_id
     rr=chat_id1.objects.filter(chat_idname=chat_id).values()
     if rr:
-        telegram_bot_token = '6577062227:AAEu_7tFR_HqK1qTIghx1a-O4QU4pr4M4Gc'
+        telegram_bot_token = os.getenv("TOKEN_ID")
         telegram_chat_id = chat_id
         bot = telebot.TeleBot(telegram_bot_token)
 
