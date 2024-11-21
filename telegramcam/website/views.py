@@ -95,7 +95,7 @@ def contact(update, context):
 def handle_message(update, context):
     update.message.reply_text(f"You said {update.message.text}, use the commands using /")
 def main():
-    updater = telegram.ext.Updater(token="6577062227:AAEu_7tFR_HqK1qTIghx1a-O4QU4pr4M4Gc", use_context=True)
+    updater = telegram.ext.Updater(token=os.getenv("TOKEN_ID"), use_context=True)
     # django_url = "http://127.0.0.1:8000/"
     # response = requests.get(django_url)
     # print(response.text)
